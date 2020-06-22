@@ -9,12 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCharacter" {
+            let characterVC = segue.destination as! CharacterTableViewController
+            characterVC.fetchData()
+    
+        }
     }
-
-
 }
-
